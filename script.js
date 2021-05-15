@@ -4,7 +4,10 @@ document.addEventListener('click', function(event) {
 });
 
 function markX(element){
-    if (element.classList.contains("cell") && element.innerText == ""){
+    if (element.classList.contains("cell")
+    && element.innerText == ""
+    && !isWinnerDetermined())
+    {
         element.innerText = "X";
         let gameContinues = checkResult();
         if (gameContinues) {
